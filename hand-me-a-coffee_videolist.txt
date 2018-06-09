@@ -1,0 +1,13 @@
+"Hello, how are you?" - Custom.
+Milk - Custom.
+Water - Dict
+Tea - Dict
+Cappuccino - Custom.
+Latte - Custom.
+Flat White - Custom.
+Sugar - Dict
+Thank you - Dict
+Please - Dict
+No - Custom.
+Yes - Custom.
+
