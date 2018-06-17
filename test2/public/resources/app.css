@@ -1,0 +1,192 @@
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Libre Franklin";
+	margin: 0;
+	padding: 0;
+}
+
+body.spa {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+}
+
+.header a, .order-menu a {
+	text-decoration: none;
+	color: black;
+}
+
+.logo-img {
+	display: inline-block;
+	height: 5em;
+	padding: 0.5em;
+	margin-right: 4px;
+	vertical-align: top;
+}
+
+.logo h1 {
+	display: inline-block;
+}
+
+.header-menu {
+	list-style: none;
+	padding: 0;
+	margin-left: 5px;
+	display: flex;
+}
+
+.header-menu li a {
+	display: block;
+	padding: 1em;
+	height: 100%;
+}
+
+.header-menu li a:hover {
+	background-color: #ece0d1;
+}
+
+.header-menu li.active a {
+	font-weight: bolder;
+	background-color: #ece0d1;
+}
+
+.content {
+	flex-grow: 1;
+
+	background-image: url("backgrounds/coffee-shop-1209863.jpg");
+	background-size: cover;
+	background-position: center;
+
+	overflow-y: scroll;
+}
+
+.card-wrapper {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+
+	position: relative;
+	overflow: auto;
+}
+
+.card-center.card-wrapper .card {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#card-howto.card-wrapper .card {
+	height: auto;
+	width: 80%;
+	max-width: 850px;
+}
+
+.card {
+	position: absolute;
+	top: 50%;
+	transform: translate(0%, -50%);
+
+	width: 96%;
+
+	border-style: solid;
+	border-width: 2px;
+	border-color: rgba(255, 255, 255, 0.2);
+	/*background-color: #ece0d1;*/
+	background-color: rgba(255,255,255,0.96);
+	margin: 2%;
+
+	padding: 6px;
+
+	flex-grow: 1;
+}
+
+@media(screen and min-width: 750px) {
+	#howto.card {
+		max-width: 720px;
+	}
+}
+
+.order-menu {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.order-menu li {
+	width: 50%;
+	padding: 10px;
+}
+
+.order-menu li a {
+	display: inline-block;
+	width: 100%;
+	padding: 10px 5px;
+	border-style: solid;
+	border-color: #ece0d1;
+	border-width: 2px;
+	text-align: center;
+}
+
+.video-holder video {
+	width: 100%;
+}
+
+@media(min-aspect-ratio: 23/20) {
+	.card-wrapper {
+	}
+
+	.card {
+		height: 96%;
+		width: auto;
+
+		top: 0%;
+		left: 50%;
+		transform: translate(-50%, 0%);
+	}
+	#card-howto.card-wrapper .card li {
+		width: 50%;
+	}
+}
+@media(min-width: 850px){
+	.header {
+		flex-direction: row;
+	}
+	#card-howto.card-wrapper .card li {
+		width: 33.33%;
+	}
+	.order-menu li span {
+		padding: 20px 5px;
+	}
+}
+@media(min-width: 550px){
+}
+
+.arrow-back {
+	display: inline-block;
+}
+
+.arrow-back img {
+	height: 1.5em;
+	padding-right: 0.5em;
+	vertical-align: text-bottom;
+}
+
+h3 {
+	display: inline-block;
+}
