@@ -41,6 +41,7 @@ body.spa {
 
 .logo h1 {
 	display: inline-block;
+	margin: 0.35em 0;
 }
 
 .header-menu {
@@ -65,6 +66,41 @@ body.spa {
 	background-color: #ece0d1;
 }
 
+@media(min-width: 750px){
+	.header {
+		flex-direction: row;
+	}
+	.logo h1 {
+		margin: 0.6em 0;
+	}
+	.logo-img {
+	}
+	.header-menu {
+	}
+}
+@media(max-width: 750px){
+	.logo h1 {
+	}
+	.logo-img {
+		height: 4em;
+	}
+	.header-menu {
+		margin: 0;
+	}
+}
+
+@media(min-aspect-ratio: 1/1) and (max-width: 750px) {
+	.header {
+		flex-direction: row;
+	}
+	.logo-img {
+		height: 1.4em;
+	}
+	.header h1 {
+		font-size: 1.3em;
+	}
+}
+
 .content {
 	flex-grow: 1;
 
@@ -78,31 +114,24 @@ body.spa {
 .card-wrapper {
 	width: 100%;
 	height: 100%;
-	margin: 0;
-	padding: 0;
 
 	position: relative;
 	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
-.card-center.card-wrapper .card {
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+.card-center.card-wrapper {
+	justify-content: center;
+	align-items: center;
 }
 #card-howto.card-wrapper .card {
 	height: auto;
-	width: 80%;
 	max-width: 850px;
 }
 
 .card {
-	position: absolute;
-	top: 50%;
-	transform: translate(0%, -50%);
-
-	width: 96%;
-
 	border-style: solid;
 	border-width: 2px;
 	border-color: rgba(255, 255, 255, 0.2);
@@ -112,11 +141,11 @@ body.spa {
 
 	padding: 6px;
 
-	flex-grow: 1;
 }
 
-@media(screen and min-width: 750px) {
+@media(min-width: 750px) {
 	#howto.card {
+		width: 80%;
 		max-width: 720px;
 	}
 }
@@ -130,16 +159,26 @@ body.spa {
 
 .order-menu li {
 	width: 50%;
-	padding: 10px;
+	padding: 2px;
+}
+@media(min-height: 450px){
+	.order-menu li {
+		width: 33%;
+	}
+}
+@media(min-width: 400px) {
 }
 
 .order-menu li a {
-	display: inline-block;
+	display: flex;
 	width: 100%;
-	padding: 10px 5px;
+	height: 100%;
+	padding: 5px;
 	border-style: solid;
 	border-color: #ece0d1;
 	border-width: 2px;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
 }
 
@@ -149,29 +188,19 @@ body.spa {
 
 @media(min-aspect-ratio: 23/20) {
 	.card-wrapper {
+		flex-direction: row;
 	}
 
-	.card {
+	.card-autoexpand .card {
 		height: 96%;
 		width: auto;
 
-		top: 0%;
-		left: 50%;
-		transform: translate(-50%, 0%);
+		display: flex;
+		flex-direction: column;
 	}
-	#card-howto.card-wrapper .card li {
-		width: 50%;
-	}
-}
-@media(min-width: 850px){
-	.header {
-		flex-direction: row;
-	}
-	#card-howto.card-wrapper .card li {
-		width: 33.33%;
-	}
-	.order-menu li span {
-		padding: 20px 5px;
+
+	.card-autoexpand .card .video-holder {
+		flex-grow: 1;
 	}
 }
 @media(min-width: 550px){

@@ -39,10 +39,8 @@ $app->get('/get-involved.html', function (Request $request, Response $response, 
 });
 
 $app->get('/', function (Request $request, Response $response, array $args) {
-    // Sample log message
-    $this->logger->info("Slim-Skeleton '/' route");
 
     // Render index view
-    return $this->renderer->render($response, 'index.phtml', ['activePage' => 'index', 'pageContent' => 'ello']);
+    return $this->renderer->render($response, 'index.phtml', ['activePage' => 'index', 'pageContent' => '']);
 });
 
