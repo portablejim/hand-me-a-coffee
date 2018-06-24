@@ -2,7 +2,7 @@
 
 # Run with base URL. i.e. http://localhost:8080/index.php/
 
-RENDER_FOLDER="build/";
+RENDER_FOLDER="docs/";
 BASE_URL="$1";
 
 /usr/bin/curl $BASE_URL > "${RENDER_FOLDER}/index.html";
