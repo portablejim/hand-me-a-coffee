@@ -4,8 +4,20 @@ if (PHP_SAPI == 'cli-server') {
     // something which should probably be served as a static file
     $url  = parse_url($_SERVER['REQUEST_URI']);
     $file = __DIR__ . $url['path'];
+    $file2 = __DIR__ . $_SERVER['PATH_INFO'];
+    if(is_file($file2)) {
+	    $type = mime_content_type($file2);
+	    if(substr($type, 0, 10) == "text/plain") {
+		    if(substr($file2, -3) == "css") $type = "text/css";
+		    if(substr($file2, -2) == "js") $type = "application/javascript";
+	    }
+	    if(substr($file2, -3) == "svg") $type = "image/svg+xml";
+	    header("Content-type: " . $type);
+	    echo file_get_contents($file2);
+	    return true;
+    }
     if (is_file($file)) {
-        return false;
+	    return false;
     }
 }
 
