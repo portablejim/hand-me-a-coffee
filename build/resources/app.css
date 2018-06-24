@@ -1,0 +1,221 @@
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Libre Franklin";
+	margin: 0;
+	padding: 0;
+}
+
+body.spa {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+}
+
+.header a, .order-menu a {
+	text-decoration: none;
+	color: black;
+}
+
+.logo-img {
+	display: inline-block;
+	height: 5em;
+	padding: 0.5em;
+	margin-right: 4px;
+	vertical-align: top;
+}
+
+.logo h1 {
+	display: inline-block;
+	margin: 0.35em 0;
+}
+
+.header-menu {
+	list-style: none;
+	padding: 0;
+	margin-left: 5px;
+	display: flex;
+}
+
+.header-menu li a {
+	display: block;
+	padding: 1em;
+	height: 100%;
+}
+
+.header-menu li a:hover {
+	background-color: #ece0d1;
+}
+
+.header-menu li.active a {
+	font-weight: bolder;
+	background-color: #ece0d1;
+}
+
+@media(min-width: 750px){
+	.header {
+		flex-direction: row;
+	}
+	.logo h1 {
+		margin: 0.6em 0;
+	}
+	.logo-img {
+	}
+	.header-menu {
+	}
+}
+@media(max-width: 750px){
+	.logo h1 {
+	}
+	.logo-img {
+		height: 4em;
+	}
+	.header-menu {
+		margin: 0;
+	}
+}
+
+@media(min-aspect-ratio: 1/1) and (max-width: 750px) {
+	.header {
+		flex-direction: row;
+	}
+	.logo-img {
+		height: 1.4em;
+	}
+	.header h1 {
+		font-size: 1.3em;
+	}
+}
+
+.content {
+	flex-grow: 1;
+
+	background-image: url("backgrounds/coffee-shop-1209863.jpg");
+	background-size: cover;
+	background-position: center;
+
+	overflow-y: scroll;
+}
+
+.card-wrapper {
+	width: 100%;
+	height: 100%;
+
+	position: relative;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.card-center.card-wrapper {
+	justify-content: center;
+	align-items: center;
+}
+#card-howto.card-wrapper .card {
+	height: auto;
+	max-width: 850px;
+}
+
+.card {
+	border-style: solid;
+	border-width: 2px;
+	border-color: rgba(255, 255, 255, 0.2);
+	/*background-color: #ece0d1;*/
+	background-color: rgba(255,255,255,0.96);
+	margin: 2%;
+
+	padding: 6px;
+
+}
+
+@media(min-width: 750px) {
+	#howto.card {
+		width: 80%;
+		max-width: 720px;
+	}
+}
+
+.order-menu {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.order-menu li {
+	width: 50%;
+	padding: 2px;
+}
+@media(min-height: 450px){
+	.order-menu li {
+		width: 33%;
+	}
+}
+@media(min-width: 400px) {
+}
+
+.order-menu li a {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	padding: 5px;
+	border-style: solid;
+	border-color: #ece0d1;
+	border-width: 2px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.video-holder video {
+	width: 100%;
+}
+
+@media(min-aspect-ratio: 23/20) {
+	.card-wrapper {
+		flex-direction: row;
+	}
+
+	.card-autoexpand .card {
+		height: 96%;
+		width: auto;
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	.card-autoexpand .card .video-holder {
+		flex-grow: 1;
+	}
+}
+@media(min-width: 550px){
+}
+
+.arrow-back {
+	display: inline-block;
+}
+
+.arrow-back img {
+	height: 1.5em;
+	padding-right: 0.5em;
+	vertical-align: text-bottom;
+}
+
+h3 {
+	display: inline-block;
+}
